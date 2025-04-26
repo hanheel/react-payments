@@ -272,7 +272,7 @@ Error generating stack: `+a.message+`
   &:hover {
     color: var(--color-black);
   }
-`,$1=({value:n,handleCardInput:r,config:c})=>ee.jsx(dv,{label:c.label,id:c.id,errorMessage:"",children:ee.jsx(G1,{config:c,handleCardInput:r,value:n})}),k1=({cardInput:n,handleCardInput:r})=>ee.jsxs(hv,{children:[ee.jsx(sv,{headText:Qn.cardBrand.headText,detailText:Qn.cardBrand.detailText}),ee.jsx($1,{config:kt.cardBrand,value:n.cardBrand,handleCardInput:r})]}),mv=({text:n,handleCLick:r,...c})=>ee.jsx(F1,{onClick:r,...c,children:n}),F1=Ye.button`
+`,$1=({value:n,handleCardInput:r,config:c})=>ee.jsx(dv,{label:c.label,id:c.id,errorMessage:"",children:ee.jsx(G1,{config:c,handleCardInput:r,value:n})}),k1=({cardInput:n,handleCardInput:r})=>ee.jsxs(hv,{children:[ee.jsx(sv,{headText:Qn.cardBrand.headText,detailText:Qn.cardBrand.detailText}),ee.jsx($1,{config:kt.cardBrand,value:n.cardBrand,handleCardInput:r})]}),mv=({text:n,handleClick:r,...c})=>ee.jsx(F1,{type:"button",onClick:r,...c,children:n}),F1=Ye.button`
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
@@ -305,7 +305,7 @@ Please change the parent <Route path="${X}"> to <Route path="${X==="/"?"*":`${X}
  * LICENSE.md file in the root directory of this source tree.
  *
  * @license MIT
- */function uE(n){return H.createElement(pS,{flushSync:nE.flushSync,...n})}const rE=()=>{const{cardInput:n,handleCardInput:r,errorMessages:c,isError:o}=B1(),{stepIndex:f,handleStepIndex:d}=Y1({cardInput:n,isError:o}),v=rs(),g=()=>{sessionStorage.setItem("firstCardNumber",JSON.stringify(n.first)),sessionStorage.setItem("cardBrand",JSON.stringify(n.cardBrand)),v("/success")};H.useEffect(()=>{d()},[n,o]);const y=hy([c.first,c.second,c.third,c.fourth]),h=hy([c.MM,c.YY]);return ee.jsxs(ee.Fragment,{children:[ee.jsx(s1,{cardInput:n,cardType:n.first?v1(n.first):"default"}),ee.jsxs(iE,{children:[f>=5&&ee.jsx(cE,{children:ee.jsx(mv,{text:"확인",handleCLick:g})}),f>=4&&ee.jsx(wi,{config:kt.password,descriptionText:Qn.password,value:{password:n.password},errorMessage:c.password,isErrors:{password:o.password},handleCardInput:r}),f>=3&&ee.jsx(wi,{config:kt.CVC,descriptionText:Qn.CVC,value:{CVC:n.CVC},errorMessage:c.CVC,isErrors:{CVC:o.CVC},handleCardInput:r}),f>=2&&ee.jsx(wi,{config:kt.expirationDate,descriptionText:Qn.expirationDate,value:{MM:n.MM,YY:n.YY},errorMessage:h,isErrors:{MM:o.MM,YY:o.YY},handleCardInput:r}),f>=1&&ee.jsx(k1,{cardInput:n,handleCardInput:r}),f>=0&&ee.jsx(wi,{config:kt.cardNumber,descriptionText:Qn.cardNumber,value:{first:n.first,second:n.second,third:n.third,fourth:n.fourth},errorMessage:y,isErrors:{first:o.first,second:o.second,third:o.third,fourth:o.fourth},handleCardInput:r})]})]})},iE=Ye.form`
+ */function uE(n){return H.createElement(pS,{flushSync:nE.flushSync,...n})}const rE=()=>{const n=rs(),{cardInput:r,handleCardInput:c,errorMessages:o,isError:f}=B1(),{stepIndex:d,handleStepIndex:v}=Y1({cardInput:r,isError:f}),g=()=>{sessionStorage.setItem("firstCardNumber",JSON.stringify(r.first)),sessionStorage.setItem("cardBrand",JSON.stringify(r.cardBrand)),n("/success")};H.useEffect(()=>{v()},[r,f]);const y=hy([o.first,o.second,o.third,o.fourth]),h=hy([o.MM,o.YY]);return ee.jsxs(ee.Fragment,{children:[ee.jsx(s1,{cardInput:r,cardType:r.first?v1(r.first):"default"}),ee.jsxs(iE,{children:[d>=5&&ee.jsx(cE,{children:ee.jsx(mv,{text:"확인",handleClick:g})}),d>=4&&ee.jsx(wi,{config:kt.password,descriptionText:Qn.password,value:{password:r.password},errorMessage:o.password,isErrors:{password:f.password},handleCardInput:c}),d>=3&&ee.jsx(wi,{config:kt.CVC,descriptionText:Qn.CVC,value:{CVC:r.CVC},errorMessage:o.CVC,isErrors:{CVC:f.CVC},handleCardInput:c}),d>=2&&ee.jsx(wi,{config:kt.expirationDate,descriptionText:Qn.expirationDate,value:{MM:r.MM,YY:r.YY},errorMessage:h,isErrors:{MM:f.MM,YY:f.YY},handleCardInput:c}),d>=1&&ee.jsx(k1,{cardInput:r,handleCardInput:c}),d>=0&&ee.jsx(wi,{config:kt.cardNumber,descriptionText:Qn.cardNumber,value:{first:r.first,second:r.second,third:r.third,fourth:r.fourth},errorMessage:y,isErrors:{first:f.first,second:f.second,third:f.third,fourth:f.fourth},handleCardInput:c})]})]})},iE=Ye.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -320,7 +320,7 @@ Please change the parent <Route path="${X}"> to <Route path="${X==="/"?"*":`${X}
   transform: translateX(-50%);
   z-index: 100;
   background-color: var(--color-black);
-`,oE=()=>{const n=sessionStorage.getItem("firstCardNumber"),r=sessionStorage.getItem("cardBrand"),c=n?JSON.parse(n):null,o=r?JSON.parse(r):null;if(!c||!o)return ee.jsx(jy,{children:"오류가 발생했어요! 다시 시도해 주세요."});const f=rs();return ee.jsxs(fE,{children:[ee.jsx(sE,{src:"./checkIcon.png"}),ee.jsxs(jy,{children:[c,"로 시작하는 ",ee.jsx("br",{}),o,"가 등록되었어요"]}),ee.jsx(mv,{text:"확인",handleCLick:()=>f("/")})]})},fE=Ye.div`
+`,oE=()=>{const n=rs(),r=sessionStorage.getItem("firstCardNumber"),c=sessionStorage.getItem("cardBrand"),o=r?JSON.parse(r):null,f=c?JSON.parse(c):null;return!o||!f?ee.jsx(jy,{children:"오류가 발생했어요! 다시 시도해 주세요."}):ee.jsxs(fE,{children:[ee.jsx(sE,{src:"./checkIcon.png"}),ee.jsxs(jy,{children:[o,"로 시작하는 ",ee.jsx("br",{}),f,"가 등록되었어요"]}),ee.jsx(mv,{text:"확인",handleClick:()=>n("/")})]})},fE=Ye.div`
   width: 100%;
   display: flex;
   flex-direction: column;
