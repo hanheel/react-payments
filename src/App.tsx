@@ -1,9 +1,12 @@
-import "./App.css";
+import GlobalStyles from './GlobalStyles';
+import router from './routes';
+import { RouterProvider } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <h1>React Payments</h1>
+      <GlobalStyles />
+      <RouterProvider router={router} />
     </>
   );
 }
